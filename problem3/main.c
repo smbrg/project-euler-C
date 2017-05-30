@@ -22,4 +22,5 @@ int main(int argc, char *argv[]) {
         }
     }
     fprintf(stdout, "%ld\n", ans);
+    return 0;
 }

@@ -16,8 +16,6 @@ int main(int argc, char *argv[]) {
         cur += prev;
         prev = temp;
     }
-
     fprintf(stdout, "%ld\n", result);
-
     return 0;
 }
