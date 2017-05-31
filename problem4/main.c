@@ -15,8 +15,7 @@ char* itoa(int value, char* result, int base) {
 	// check that the base if valid
 	if (base < 2 || base > 36) { *result = '\0'; return result; }
 
-	char* ptr = result, *ptr1 = result, tmp_char;
-	int tmp_value;
+	char* ptr = result, *ptr1 = result, tmp_char; int tmp_value;
 
 	do {
 		tmp_value = value;
@@ -54,15 +53,17 @@ int main(int argc, char *argv[]) {
     int i, j;
     int result;
     int candidate;
-    char buf[16];
+    int temp;
+    char buf[32];
 
     for (i = 1; i < 1000; i++) {
         candidate = 0;
         for (j = 0; j < 999; j++) {
             candidate += i;
+            temp = candidate;
             itoa(candidate, buf, 10);
-            if (is_palindrome(buf)) {
-                result = candidate;
+            if (is_palindrome(buf) && (temp > result) ) {
+                result = temp;
             }
         }
     }
